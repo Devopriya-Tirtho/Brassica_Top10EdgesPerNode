@@ -99,7 +99,7 @@ async function fetchAndCacheDatasets() {
     try {
         nodeData3D = await fetchAndCacheJson('Brassica_Node_3D.json', 'nodeData3D');
         nodeData2D = await fetchAndCacheJson('Brassica_Node_2D.json', 'nodeData2D');
-        edgeData = await fetchAndCacheJson('H_Brassica_Edge_processed_with_interaction.json', 'edgeData');
+        edgeData = await fetchAndCacheJson('Brassica_Edge_top10_interactions.json', 'edgeData');
         heatmapData = await fetchAndCacheJson('Brassica_Edge_processed_with_interaction.json', 'heatmapData');
         //geneDensityData = await fetchAndCacheJson('WT_BS_gene_density.json', 'geneDensityData');
         //console.log("All datasets loaded successfully");
@@ -187,7 +187,7 @@ document.getElementById('visualize-nodes').addEventListener('click', function() 
     const selectedNodeIds = Array.from(document.querySelectorAll('#node-checkboxes input[type="checkbox"]:checked'))
                                 .map(checkbox => checkbox.dataset.nodeId);
     const selectedDataset = document.getElementById('dataset-selector').value;
-    const edgeDataPath = selectedDataset === 'Brassica' ? 'H_Brassica_Edge_processed_with_interaction.json' : 'Other_Dataset_Edge.json';
+    const edgeDataPath = selectedDataset === 'Brassica' ? 'Brassica_Edge_top10_interactions.json' : 'Other_Dataset_Edge.json';
 
     // Get interaction filters
     const interactionFilters = Array.from(document.querySelectorAll('input[name="interaction"]:checked'))
@@ -244,7 +244,7 @@ document.getElementById('visualize-range').addEventListener('click', function() 
 
     // Fetch and filter edges, then update the visualizations
     const selectedDataset = document.getElementById('dataset-selector').value;
-    const edgeDataPath = selectedDataset === 'Brassica' ? 'H_Brassica_Edge_processed_with_interaction.json' : 'Other_Dataset_Edge.json';
+    const edgeDataPath = selectedDataset === 'Brassica' ? 'Brassica_Edge_top10_interactions.json' : 'Other_Dataset_Edge.json';
     const nodeDataPath = selectedDataset === 'Brassica' ? 'Brassica_Node_2D.json' : 'Other_Dataset_Node_data.json';
     
     const interactionFilters = Array.from(document.querySelectorAll('input[name="interaction"]:checked'))
@@ -280,7 +280,7 @@ document.getElementById('apply-interaction').addEventListener('click', function(
     }
 
     const selectedDataset = document.getElementById('dataset-selector').value;
-    const edgeDataPath = selectedDataset === 'Brassica' ? 'H_Brassica_Edge_processed_with_interaction.json' : 'Other_Dataset_Edge.json';
+    const edgeDataPath = selectedDataset === 'Brassica' ? 'Brassica_Edge_top10_interactions.json' : 'Other_Dataset_Edge.json';
     const selectedNodeIds = selectedNodeIdsForRange.length > 0 ? selectedNodeIdsForRange : Array.from(document.querySelectorAll('#node-checkboxes input[type="checkbox"]:checked')).map(checkbox => checkbox.dataset.nodeId);
     const nodeDataPath = selectedDataset === 'Brassica' ? 'Brassica_Node_2D.json' : 'Other_Dataset_Node_data.json';
 
@@ -512,7 +512,7 @@ function updateEdgeVisibility(value) {
 
     const selectedDataset = document.getElementById('dataset-selector').value;
     const edgeDataPath = selectedDataset === 'Brassica' 
-        ? 'H_Brassica_Edge_processed_with_interaction.json' 
+        ? 'Brassica_Edge_top10_interactions.json' 
         : 'Other_Dataset_Edge.json';
     const nodeDataPath = selectedDataset === 'Brassica' 
         ? 'Brassica_Node_2D.json' 
