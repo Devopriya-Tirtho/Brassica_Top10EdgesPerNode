@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Visualization Dashboard for HiC Data
 
 ## Overview
@@ -91,3 +92,7 @@ Contributions are welcome! Please feel free to submit issues, fork the repositor
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+=======
+# Brassica_Top10EdgesPerNode
+This repository provides a different version of my research work (Dashboard) with dataset which contains only top 10 weighted edges for each node for Brassica
+>>>>>>> ef633ced4d241031a61796f12cfccfa18a64bd5c
